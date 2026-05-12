@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  background: #0a0a0a;
+  color: #f5f5f5;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Background Glow */
+body::before {
+  content: "";
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.08),
+    transparent 70%
+  );
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: blur(40px);
+}
+
+.container {
+  text-align: center;
+  z-index: 2;
+  padding: 20px;
+  animation: fadeIn 1.5s ease;
+}
+
+.brand {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: lowercase;
+  margin-bottom: 15px;
+}
+
+.divider {
+  width: 80px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 0 auto 25px;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 10px;
+}
+
+.message {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.55);
+  max-width: 500px;
+  line-height: 1.8;
+}
+
+.perfume-icon {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  opacity: 0.8;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .message {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .subtitle {
+    letter-spacing: 2px;
+  }
+}
