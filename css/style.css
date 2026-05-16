@@ -7,7 +7,7 @@
 body {
   height: 100vh;
   overflow: hidden;
-  background: #0a0a0a;
+  background: linear-gradient(135deg, #18122B 0%, #2D3250 100%);
   color: #f5f5f5;
   font-family: "Inter", sans-serif;
   display: flex;
@@ -56,6 +56,12 @@ body::before {
   margin: 0 auto 25px;
 }
 
+.divider.gold {
+  background: linear-gradient(90deg, #FFD700 0%, #BFA14A 100%);
+  height: 2px;
+  box-shadow: 0 0 8px 1px #FFD70044;
+}
+
 .subtitle {
   font-size: 0.95rem;
   letter-spacing: 3px;
@@ -65,16 +71,32 @@ body::before {
 }
 
 .message {
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.55);
+  font-size: 1.08rem;
+  color: rgba(255, 255, 255, 0.60);
   max-width: 500px;
   line-height: 1.8;
+  margin-bottom: 18px;
+}
+
+.luxury-highlight {
+  color: #FFD700;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px #FFD70033;
 }
 
 .perfume-icon {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 25px;
-  opacity: 0.8;
+  opacity: 0.95;
+  color: #FFD700;
+  filter: drop-shadow(0 0 8px #FFD70088);
+  transition: transform 0.4s cubic-bezier(.4,2,.6,1), filter 0.3s;
+  cursor: pointer;
+}
+.perfume-icon:hover {
+  transform: scale(1.18) rotate(-8deg);
+  filter: drop-shadow(0 0 18px #FFD700cc);
 }
 
 @keyframes fadeIn {
@@ -86,6 +108,32 @@ body::before {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Call to Action */
+.cta {
+  margin-top: 18px;
+}
+.cta-btn {
+  background: linear-gradient(90deg, #FFD700 0%, #BFA14A 100%);
+  color: #18122B;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  padding: 10px 32px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 1.08rem;
+  box-shadow: 0 2px 16px 0 #FFD70033;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+  border: none;
+  outline: none;
+  display: inline-block;
+  letter-spacing: 1px;
+}
+.cta-btn:hover {
+  background: linear-gradient(90deg, #BFA14A 0%, #FFD700 100%);
+  color: #2D3250;
+  box-shadow: 0 4px 24px 0 #FFD70066;
 }
 
 @media (max-width: 600px) {
